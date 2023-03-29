@@ -9,10 +9,10 @@ async function initPinecone() {
     const pinecone = new PineconeClient();
 
     await pinecone.init({
-      environment: process.env.PINECONE_ENVIRONMENT ?? '', //this is in the dashboard
+      environment: process.env.PINECONE_ENVIRONMENT ?? '', //this is in the dashboard      
       apiKey: process.env.PINECONE_API_KEY ?? '',
     });
-
+    pinecone.projectName = "80488dd";
     return pinecone;
   } catch (error) {
     console.log('error', error);
